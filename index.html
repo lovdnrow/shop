@@ -189,38 +189,52 @@ footer {
 </div>
 
   <script>
-function showCategory(id) {
-  document.querySelectorAll('.content').forEach(c => {
-    c.style.display = 'none';
-  });
-  document.getElementById(id).style.display = 'block';
-}
-
-function searchProducts() {
-  const keyword = document.getElementById("search").value.toLowerCase();
   const contents = document.querySelectorAll(".content");
 
-  contents.forEach(content => {
-    let found = false;
-    const links = content.querySelectorAll(".link");
+  // SEMBUNYIKAN SEMUA PRODUK DI AWAL
+  contents.forEach(c => c.style.display = "none");
 
-    links.forEach(link => {
-      const text = link.innerText.toLowerCase();
-      if (text.includes(keyword)) {
-        link.style.display = "block";
-        found = true;
+  function showCategory(category) {
+    document.getElementById("search").value = "";
+
+    contents.forEach(content => {
+      content.style.display =
+        content.dataset.category === category ? "block" : "none";
+    });
+  }
+
+  function searchProduct() {
+    const keyword = document
+      .getElementById("search")
+      .value
+      .toLowerCase();
+
+    let found = false;
+
+    contents.forEach(content => {
+      let match = false;
+      const links = content.querySelectorAll(".link");
+
+      links.forEach(link => {
+        if (link.innerText.toLowerCase().includes(keyword)) {
+          match = true;
+          found = true;
+        }
+      });
+
+      // LOGIKA PENTING
+      if (keyword === "") {
+        content.style.display = "none";
       } else {
-        link.style.display = "none";
+        content.style.display = match ? "block" : "none";
       }
     });
-
-    content.style.display = found ? "block" : "none";
-  });
-}
+  }
 </script>
 
 </body>
 </html>
+
 
 
 
