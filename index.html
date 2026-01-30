@@ -8,6 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <style>
+    input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-family: inherit;
+}
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -100,6 +109,8 @@
 </head>
 <body>
 
+  <input type="text" id="search" placeholder="🔍 Cari produk..." onkeyup="searchProducts()">
+
 <div class="card">
   <h1>🌸 lovdnrow 🌸 </h1>
   <p>Pilih kategori produk ✨</p>
@@ -136,5 +147,37 @@ function showCategory(id) {
 }
 </script>
 
+  <script>
+function showCategory(id) {
+  document.querySelectorAll('.content').forEach(c => {
+    c.style.display = 'none';
+  });
+  document.getElementById(id).style.display = 'block';
+}
+
+function searchProducts() {
+  const keyword = document.getElementById("search").value.toLowerCase();
+  const contents = document.querySelectorAll(".content");
+
+  contents.forEach(content => {
+    let found = false;
+    const links = content.querySelectorAll(".link");
+
+    links.forEach(link => {
+      const text = link.innerText.toLowerCase();
+      if (text.includes(keyword)) {
+        link.style.display = "block";
+        found = true;
+      } else {
+        link.style.display = "none";
+      }
+    });
+
+    content.style.display = found ? "block" : "none";
+  });
+}
+</script>
+
 </body>
 </html>
+
