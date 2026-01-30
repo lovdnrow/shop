@@ -109,11 +109,11 @@
 </head>
 <body>
 
-  <input type="text" id="search" placeholder="🔍 Cari produk..." onkeyup="searchProducts()">
-
 <div class="card">
   <h1>🌸 lovdnrow 🌸 </h1>
   <p>Pilih kategori produk ✨</p>
+
+  <input type="text" id="search" placeholder="🔍 search..." onkeyup="searchProducts()">
 
   <!-- CATEGORY BOX -->
   <div class="categories">
@@ -136,16 +136,6 @@
 
   <footer>made with 💖</footer>
 </div>
-
-<script>
-function showCategory(id) {
-  document.querySelectorAll('.content').forEach(c => {
-    c.style.display = 'none';
-  });
-
-  document.getElementById(id).style.display = 'block';
-}
-</script>
 
   <script>
 function showCategory(id) {
@@ -180,4 +170,5 @@ function searchProducts() {
 
 </body>
 </html>
+
 
