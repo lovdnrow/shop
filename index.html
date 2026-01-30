@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>✨🇩​​🇳​​🇷​​🇴​​🇼​​🇸​​🇭​​🇴​​🇵​✨</title>
+  <title>✨🇩🇳🇷🇴🇼🇸🇭🇴🇵✨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -36,23 +36,39 @@
       text-align: center;
       color: #777;
       font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      margin-bottom: 20px;
-      font-family: inherit;
-    }
-
-    .category {
       margin-bottom: 25px;
     }
 
-    .category h2 {
+    /* CATEGORY BOX */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .cat-card {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: white;
+      padding: 18px;
+      border-radius: 18px;
+      text-align: center;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cat-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* CONTENT */
+    .content {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .content h2 {
       font-size: 16px;
       margin-bottom: 10px;
       color: #555;
@@ -61,7 +77,7 @@
     .link {
       display: block;
       text-decoration: none;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
       color: white;
       padding: 12px;
       border-radius: 14px;
@@ -72,61 +88,53 @@
 
     .link:hover {
       transform: scale(1.04);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
     }
 
     footer {
       text-align: center;
       font-size: 12px;
       color: #aaa;
-      margin-top: 15px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
 <div class="card">
-  <h1>🌸 lovdnrow 🌸</h1>
-  <p>Find my products easily ✨</p>
+  <h1>🌸 lovdnrow 🌸 </h1>
+  <p>Pilih kategori produk ✨</p>
 
-  <!-- SEARCH -->
-  <input type="text" id="search" placeholder="🔍 Cari produk..." onkeyup="searchLinks()">
-
-  <!-- FASHION -->
-  <div class="category">
-    <h2>👗 Fashion</h2>
-    <a class="link" href="https://s.shopee.co.id/30i8cLg5Ne" data-name="Whispie" data-category="fashion">🌸 Kemaja Whispie</a>
-    <a class="link" href="https://s.shopee.co.id/14X2uGdID" data-name="Daisy" data-category="fashion">🌸 Kemeja Daisy</a>
+  <!-- CATEGORY BOX -->
+  <div class="categories">
+    <div class="cat-card" onclick="showCategory('fashion')">👗 Fashion</div>
+    <div class="cat-card" onclick="showCategory('jedai')">🌸 Jedai</div>
   </div>
 
-  <!-- FOOD -->
-  <div class="category">
+  <!-- CONTENT -->
+  <div id="fashion" class="content">
+    <h2>👗 Fashion</h2>
+    <a class="link" href="https://s.shopee.co.id/30i8cLg5N" target="_blank">🌸 Whispie</a>
+    <a class="link" href="https://s.shopee.co.id/14X2uGdID" target="_blank">🧶 Daisy</a>
+  </div>
+
+  <div id="jedai" class="content">
     <h2>🌸 Jedai</h2>
-    <a class="link" href="https://s.shopee.co.id/10x4EWRLit" data-name="Jedai Kamboja" data-category="Jedai">🔥 Jedai Kamboja</a>
-    <a class="link" href="https://s.shopee.co.id/BNxF2yB15" data-name="Jedai Anggrek" data-category="Jedai">🔥 Jedai Anggrek</a>
+    <a class="link" href="https://s.shopee.co.id/10x4EWRLit" target="_blank">✨ Bunga Kamboja</a>
+    <a class="link" href="https://s.shopee.co.id/BNxF2yB15" target="_blank">🫧 Bunga Anggrek</a>
   </div>
 
   <footer>made with 💖</footer>
 </div>
 
 <script>
-function searchLinks() {
-  const input = document.getElementById("search").value.toLowerCase();
-  const links = document.querySelectorAll(".link");
-  const categories = document.querySelectorAll(".category");
-
-  links.forEach(link => {
-    const name = link.dataset.name.toLowerCase();
-    link.style.display = name.includes(input) ? "block" : "none";
+function showCategory(id) {
+  document.querySelectorAll('.content').forEach(c => {
+    c.style.display = 'none';
   });
 
-  categories.forEach(category => {
-    const visibleLinks = category.querySelectorAll('.link[style="display: block"]');
-    category.style.display = visibleLinks.length ? "block" : "none";
-  });
+  document.getElementById(id).style.display = 'block';
 }
 </script>
 
 </body>
 </html>
-
