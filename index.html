@@ -7,17 +7,11 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <style>/* RESET KECIL */
+  <style>
+/* RESET KECIL */
 * {
   box-sizing: border-box;
 }
-    <input
-  type="text"
-  id="search"
-  placeholder="🔍 Cari produk..."
-  onkeyup="searchProduct()"
->
-
 
 /* BODY */
 body {
@@ -53,6 +47,25 @@ p {
   color: #777;
   font-size: 14px;
   margin-bottom: 18px;
+}
+
+/* SEARCH INPUT */
+input {
+  width: 90%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  margin: 0 auto 22px auto;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #f2a6c9;
+  box-shadow: 0 0 0 3px rgba(242, 166, 201, 0.25);
 }
 
 /* KOTAK KATEGORI */
@@ -234,6 +247,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
