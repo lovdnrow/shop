@@ -11,6 +11,13 @@
 * {
   box-sizing: border-box;
 }
+    <input
+  type="text"
+  id="search"
+  placeholder="🔍 Cari produk..."
+  onkeyup="searchProduct()"
+>
+
 
 /* BODY */
 body {
@@ -152,13 +159,13 @@ footer {
   </div>
 
   <!-- CONTENT -->
-  <div id="fashion" class="content">
+  <div id="fashion" class="content" data-category="fashion">
     <h2>👗 Fashion</h2>
     <a class="link" href="https://s.shopee.co.id/30i8cLg5N" target="_blank">🌸 Whispie</a>
     <a class="link" href="https://s.shopee.co.id/14X2uGdID" target="_blank">🧶 Daisy</a>
   </div>
 
-  <div id="jedai" class="content">
+  <div id="jedai" class="content" data-category="jedai">
     <h2>🌸 Jedai</h2>
     <a class="link" href="https://s.shopee.co.id/10x4EWRLit" target="_blank">1</a>
     <a class="link" href="https://s.shopee.co.id/BNxF2yB15" target="_blank">2</a>
@@ -227,6 +234,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
