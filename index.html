@@ -8,207 +8,193 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <style>
-/* RESET KECIL */
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-/* BODY */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 30px 0;
-}
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 30px 0;
+    }
 
-/* CARD UTAMA */
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 25px;
-  width: 90%;
-  max-width: 420px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 25px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
 
-/* JUDUL */
-h1 {
-  text-align: center;
-  margin-bottom: 5px;
-  font-size: 24px;
-}
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+      font-size: 24px;
+    }
 
-/* SUBTITLE */
-p {
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 18px;
-}
+    p {
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
 
-/* SEARCH INPUT */
-input {
-  width: 90%;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid #ddd;
-  margin: 0 auto 22px auto;
-  display: block;
-  font-family: inherit;
-  font-size: 14px;
-  outline: none;
-  transition: 0.3s;
-}
+    /* SEARCH */
+    #search {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid #ddd;
+      margin-bottom: 22px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: 0.3s;
+    }
 
-input:focus {
-  border-color: #f2a6c9;
-  box-shadow: 0 0 0 3px rgba(242, 166, 201, 0.25);
-}
+    #search:focus {
+      border-color: #f2a6c9;
+      box-shadow: 0 0 0 3px rgba(242, 166, 201, 0.25);
+    }
 
-/* KOTAK KATEGORI */
-.categories {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 22px;
-}
+    /* CATEGORIES */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
 
-/* CARD KATEGORI */
-.cat-card {
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  color: white;
-  padding: 18px 10px;
-  border-radius: 18px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
+    .cat-card {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: white;
+      padding: 18px;
+      border-radius: 18px;
+      text-align: center;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
 
-.cat-card:hover {
-  transform: translateY(-3px) scale(1.04);
-}
+    .cat-card:hover {
+      transform: translateY(-3px) scale(1.04);
+    }
 
-/* ISI KATEGORI */
-.content {
-  display: none;
-  margin-top: 10px;
-  animation: fade 0.3s ease;
-}
+    /* CONTENT */
+    .content {
+      display: none;
+      margin-top: 10px;
+      animation: fade 0.3s ease;
+    }
 
-/* JUDUL ISI */
-.content h2 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #555;
-}
+    .content h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #555;
+    }
 
-/* LINK PRODUK */
-.link {
-  display: block;
-  text-decoration: none;
-  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-  color: white;
-  padding: 12px 14px;
-  border-radius: 14px;
-  margin: 8px 0;
-  font-size: 14px;
-  transition: 0.3s;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
+    .link {
+      display: block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      color: white;
+      padding: 12px;
+      border-radius: 14px;
+      margin: 8px 0;
+      font-size: 14px;
+      transition: 0.3s;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
 
-.link:hover {
-  transform: translateY(-2px) scale(1.03);
-}
+    .link:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 22px;
-}
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 22px;
+    }
 
-/* ANIMASI HALUS */
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RESPONSIVE EXTRA KECIL */
-@media (max-width: 360px) {
-  h1 {
-    font-size: 22px;
-  }
-
-  .cat-card {
-    font-size: 13px;
-    padding: 16px 8px;
-  }
-}
-</style>
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
 
 <div class="card">
-  <h1>🌸 lovdnrow 🌸 </h1>
+  <h1>🌸 lovdnrow 🌸</h1>
   <p>Pilih kategori produk ✨</p>
 
-  <!-- CATEGORY BOX -->
+  <!-- SEARCH -->
+  <input
+    type="text"
+    id="search"
+    placeholder="🔍 Cari produk..."
+    onkeyup="searchProduct()"
+  >
+
+  <!-- CATEGORIES -->
   <div class="categories">
     <div class="cat-card" onclick="showCategory('fashion')">👗 Fashion</div>
     <div class="cat-card" onclick="showCategory('jedai')">🌸 Jedai</div>
   </div>
 
   <!-- CONTENT -->
-  <div id="fashion" class="content" data-category="fashion">
+  <div class="content" data-category="fashion">
     <h2>👗 Fashion</h2>
-    <a class="link" href="https://s.shopee.co.id/30i8cLg5N" target="_blank">🌸 Whispie</a>
-    <a class="link" href="https://s.shopee.co.id/14X2uGdID" target="_blank">🧶 Daisy</a>
+    <a class="link" href="https://s.shopee.co.id/30i8cLg5N">🌸 Whispie</a>
+    <a class="link" href="https://s.shopee.co.id/14X2uGdID">🧶 Daisy</a>
   </div>
 
-  <div id="jedai" class="content" data-category="jedai">
+  <div class="content" data-category="jedai">
     <h2>🌸 Jedai</h2>
-    <a class="link" href="https://s.shopee.co.id/10x4EWRLit" target="_blank">1</a>
-    <a class="link" href="https://s.shopee.co.id/BNxF2yB15" target="_blank">2</a>
-    <a class="link" href="https://s.shopee.co.id/9zrvAky1Qv?share_channel_code=1" target="_blank">3</a>
-    <a class="link" href="https://s.shopee.co.id/AKUlZR8xHj?share_channel_code=1" target="_blank">4</a>
-    <a class="link" href="https://s.shopee.co.id/70EJbTQGdo?share_channel_code=1" target="_blank">5</a>
-    <a class="link" href="https://s.shopee.co.id/9zrvB6yPqj?share_channel_code=1" target="_blank">6</a>
-    <a class="link" href="https://s.shopee.co.id/4Au8ESaGKD?share_channel_code=1" target="_blank">7</a>
-    <a class="link" href="https://s.shopee.co.id/9fF4mm9w3l?share_channel_code=1" target="_blank">8</a>
-    <a class="link" href="https://s.shopee.co.id/5q2MDliTwZ?share_channel_code=1" target="_blank">9</a>
-    <a class="link" href="https://s.shopee.co.id/9UveaYV1vC?share_channel_code=1" target="_blank">10</a>
-    <a class="link" href="https://s.shopee.co.id/9fF4mt2mDz?share_channel_code=1" target="_blank">11</a>
-    <a class="link" href="https://s.shopee.co.id/8V37OlpMTL?share_channel_code=1" target="_blank">12</a>
-    <a class="link" href="https://s.shopee.co.id/6putPo91dK?share_channel_code=1" target="_blank">13</a>
-    <a class="link" href="https://s.shopee.co.id/5AmfQo1rUH?share_channel_code=1" target="_blank">14</a>
-    <a class="link" href="https://s.shopee.co.id/30iAqtpBXI?share_channel_code=1" target="_blank">15</a>
-    <a class="link" href="https://s.shopee.co.id/5L65dFxnWF?share_channel_code=1" target="_blank">16</a>
+     <a class="link" href="https://s.shopee.co.id/10x4EWRLit">1</a>
+    <a class="link" href="https://s.shopee.co.id/BNxF2yB15">2</a>
+    <a class="link" href="https://s.shopee.co.id/9zrvAky1Qv?share_channel_code=1">3</a>
+    <a class="link" href="https://s.shopee.co.id/AKUlZR8xHj?share_channel_code=1">4</a>
+    <a class="link" href="https://s.shopee.co.id/70EJbTQGdo?share_channel_code=1">5</a>
+    <a class="link" href="https://s.shopee.co.id/9zrvB6yPqj?share_channel_code=1">6</a>
+    <a class="link" href="https://s.shopee.co.id/4Au8ESaGKD?share_channel_code=1">7</a>
+    <a class="link" href="https://s.shopee.co.id/9fF4mm9w3l?share_channel_code=1">8</a>
+    <a class="link" href="https://s.shopee.co.id/5q2MDliTwZ?share_channel_code=1">9</a>
+    <a class="link" href="https://s.shopee.co.id/9UveaYV1vC?share_channel_code=1">10</a>
+    <a class="link" href="https://s.shopee.co.id/9fF4mt2mDz?share_channel_code=1">11</a>
+    <a class="link" href="https://s.shopee.co.id/8V37OlpMTL?share_channel_code=1">12</a>
+    <a class="link" href="https://s.shopee.co.id/6putPo91dK?share_channel_code=1">13</a>
+    <a class="link" href="https://s.shopee.co.id/5AmfQo1rUH?share_channel_code=1">14</a>
+    <a class="link" href="https://s.shopee.co.id/30iAqtpBXI?share_channel_code=1">15</a>
+    <a class="link" href="https://s.shopee.co.id/5L65dFxnWF?share_channel_code=1">16</a>
+
   </div>
 
   <footer>made with 💖</footer>
 </div>
 
-  <script>
+<script>
   const contents = document.querySelectorAll(".content");
+  const searchInput = document.getElementById("search");
 
-  // SEMBUNYIKAN SEMUA PRODUK DI AWAL
+  // SEMUA HIDDEN DI AWAL
   contents.forEach(c => c.style.display = "none");
 
   function showCategory(category) {
-    document.getElementById("search").value = "";
+    searchInput.value = "";
 
     contents.forEach(content => {
       content.style.display =
@@ -217,12 +203,7 @@ footer {
   }
 
   function searchProduct() {
-    const keyword = document
-      .getElementById("search")
-      .value
-      .toLowerCase();
-
-    let found = false;
+    const keyword = searchInput.value.toLowerCase();
 
     contents.forEach(content => {
       let match = false;
@@ -230,12 +211,13 @@ footer {
 
       links.forEach(link => {
         if (link.innerText.toLowerCase().includes(keyword)) {
+          link.style.display = "block";
           match = true;
-          found = true;
+        } else {
+          link.style.display = "none";
         }
       });
 
-      // LOGIKA PENTING
       if (keyword === "") {
         content.style.display = "none";
       } else {
@@ -247,10 +229,3 @@ footer {
 
 </body>
 </html>
-
-
-
-
-
-
-
